@@ -1,0 +1,22 @@
+<app-content-header 
+    [icon]="'format_line_spacing'" 
+    [title]="'Categorias'" 
+    [hideBreadcrumb]="false"
+    [hasBgImage]="true" 
+    [class]="'pb-4'">
+</app-content-header>
+
+<form [formGroup]="categoriaForm">
+  <div fxLayout="row wrap">
+    <div fxFlex="100" class="px-1">
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>Nome da categoria</mat-label>
+        <input matInput placeholder="Nome da categoria" formControlName="nome" required>
+        <mat-error *ngIf="categoriaForm.controls.nome.errors?.required">O Nome e obrigatorio</mat-error>
+      </mat-form-field>
+    </div>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="left left" class="mt-2 p-1">
+    <a [routerLink]="['/']" mat-raised-button color="primary">Salvar</a>
+  </div>
+</form>
